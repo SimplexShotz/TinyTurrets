@@ -54,9 +54,9 @@ var turrets = [
 ];
 
 var grid = [];
-for (var y = 0; ++y < 24;) {
+for (var y = -1; ++y < 24;) {
   grid.push([]);
-  for (var x = 0; ++x < 16;) {
+  for (var x = -1; ++x < 16;) {
     grid[y].push({
       turret: -1,
       colornum: 0,
