@@ -1,6 +1,8 @@
 
 var database, ref;
 
+var pin = window.location.href.split("/").pop().split("?").pop();
+
 var colors = [
   {
     name: "Red",
