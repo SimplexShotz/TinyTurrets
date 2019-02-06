@@ -58,10 +58,12 @@ var turrets = [
 var themes = [
   {
     name: "Light",
-    background: color(255, 255, 255)
+    background: color(255, 255, 255),
+    text: color(50, 50, 50)
   }, {
     name: "Dark",
-    background: color(50, 50, 50)
+    background: color(50, 50, 50),
+    text: color(200, 200, 200)
   }
 ];
 var theme = 0;
@@ -155,7 +157,7 @@ function draw() {
   
   } else {
     background(50);
-    fill(200);
+    fill(t.text);
     textAlign(CENTER, CENTER);
     textSize(window.innerWidth / 50);
     text("Add ?<PIN> to the end of the URL to join a game. Replace <PIN> with a number.", window.innerWidth / 2, window.innerHeight / 2);
