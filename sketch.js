@@ -145,7 +145,7 @@ function draw() {
     background(50);
     fill(200);
     textAlign(CENTER, CENTER);
-    textSize(window.innerWidth / 500);
+    textSize(window.innerWidth / 50);
     text("Add ?<PIN> to the end of the URL to join a game. Replace <PIN> with a number.", window.innerWidth / 2, window.innerHeight / 2);
   }
   mp = false, mc = false;
