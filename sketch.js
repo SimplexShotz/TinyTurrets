@@ -1,8 +1,6 @@
 
 var database, ref;
 
-var txt = {};
-
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   // Initialize Firebase
@@ -17,18 +15,8 @@ function setup() {
   firebase.initializeApp(config);
   database = firebase.database();
   ref = {
-    pts: database.ref("pts"),
-    txt: database.ref("txt")
+    games: database.ref("games")
   };
-
-  ref.txt.once("value", function(data) {
-    var d = data.val();
-    txt = d;
-  });
-  ref.txt.on("value", function(data) {
-    var d = data.val();
-    txt = d;
-  });
 }
 
 function hover(x, y, w, h) {
@@ -52,10 +40,9 @@ function mouseClicked() {
   mc = true;
 }
 
-var a = [1, 2, 3, 4, 5];
 function draw() {
   cursor();
   background(50);
-  console.log(a.map(v => v * 2 - 1));
+  
   mp = false, mc = false;
 }
