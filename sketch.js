@@ -26,14 +26,14 @@ var turrets = [
       operator: "*",
       amount: 0,
       cutoff: 0,
-      rounding: round
+      rounding: Math.round
     },
     slowdown: {
       initial: 0,
       operator: "*",
       amount: 0,
       cutoff: 0,
-      rounding: round
+      rounding: Math.round
     },
     attack: {
       attacks: true,
