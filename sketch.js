@@ -55,6 +55,18 @@ var turrets = [
   }
 ];
 
+var themes = [
+  {
+    name: "Light",
+    background: color(255, 255, 255)
+  }, {
+    name: "Dark",
+    background: color(50, 50, 50)
+  }
+];
+var theme = 0;
+var t = themes[theme];
+
 var grid = [];
 for (var y = -1; ++y < 24;) {
   grid.push([]);
@@ -77,12 +89,12 @@ function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyC82qKSxASHV73ab3MhmfZOw1OUryZwEqI",
-    authDomain: "realtimefirebasetest.firebaseapp.com",
-    databaseURL: "https://realtimefirebasetest.firebaseio.com",
-    projectId: "realtimefirebasetest",
-    storageBucket: "realtimefirebasetest.appspot.com",
-    messagingSenderId: "628446710214"
+    apiKey: "AIzaSyAMmHk53itobniTDacP2c4XGZo90VmGxY4",
+    authDomain: "tiny-turrets.firebaseapp.com",
+    databaseURL: "https://tiny-turrets.firebaseio.com",
+    projectId: "tiny-turrets",
+    storageBucket: "",
+    messagingSenderId: "296161920968"
   };
   firebase.initializeApp(config);
   database = firebase.database();
@@ -138,7 +150,7 @@ function mouseClicked() {
 
 function draw() {
   cursor();
-  background(50);
+  background(t.background);
   if (pin !== "") {
   
   } else {
