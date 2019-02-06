@@ -55,19 +55,7 @@ var turrets = [
   }
 ];
 
-var themes = [
-  {
-    name: "Light",
-    background: color(255, 255, 255),
-    text: color(50, 50, 50)
-  }, {
-    name: "Dark",
-    background: color(50, 50, 50),
-    text: color(200, 200, 200)
-  }
-];
-var theme = 0;
-var t = themes[theme];
+var themes, theme, t;
 
 var grid = [];
 for (var y = -1; ++y < 24;) {
@@ -127,6 +115,19 @@ function setup() {
       }
     });
   }
+  themes = [
+    {
+      name: "Light",
+      background: color(255, 255, 255),
+      text: color(50, 50, 50)
+    }, {
+      name: "Dark",
+      background: color(50, 50, 50),
+      text: color(200, 200, 200)
+    }
+  ];
+  theme = 0;
+  t = themes[theme];
 }
 
 function hover(x, y, w, h) {
