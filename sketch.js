@@ -157,7 +157,6 @@ function draw() {
   if (pin !== "") {
   
   } else {
-    background(50);
     fill(t.text);
     textAlign(CENTER, CENTER);
     textSize(window.innerWidth / 50);
