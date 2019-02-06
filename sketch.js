@@ -3,6 +3,8 @@ var database, ref;
 
 var pin = window.location.href.split("/").pop().split("?").pop();
 
+var gameInfo = {};
+
 var colors = [
   {
     name: "Red",
@@ -85,8 +87,32 @@ function setup() {
   firebase.initializeApp(config);
   database = firebase.database();
   ref = {
-    games: database.ref("games")
+    game: database.ref("games")
   };
+  
+  if (pin !== "") {
+    ref.game.once("value", function(data) {
+      var d = data.val();
+      var found = false;
+      for (var i in d) {
+        if (i === pin) {
+          // set game info to d[i]
+          found = true;
+          break;
+        }
+      }
+      if (!found) {
+        // create game
+        ref.game.child(pin).set({
+          grid: grid,
+          bullets: [],
+          players: [{
+
+          }]
+        });
+      }
+    });
+  }
 }
 
 function hover(x, y, w, h) {
@@ -113,6 +139,14 @@ function mouseClicked() {
 function draw() {
   cursor();
   background(50);
+  if (pin !== "") {
   
+  } else {
+    background(50);
+    fill(200);
+    textAlign(CENTER, CENTER);
+    textSize(window.innerWidth / 500);
+    text("Add ?<PIN> to the end of the URL to join a game. Replace <PIN> with a number.", window.innerWidth / 2, window.innerHeight / 2);
+  }
   mp = false, mc = false;
 }
