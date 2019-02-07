@@ -109,7 +109,7 @@ function setup() {
           grid: grid,
           bullets: [],
           players: [{
-
+            color: -1
           }]
         });
       }
@@ -155,7 +155,7 @@ function draw() {
   cursor();
   background(t.background);
   if (pin !== "") {
-  
+    
   } else {
     fill(t.text);
     textAlign(CENTER, CENTER);
